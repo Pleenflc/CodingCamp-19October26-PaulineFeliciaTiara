@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Life Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Greeting and Clock Card -->
+        <section class="card greeting-card">
+            <div class="greeting-content">
+                <div class="greeting-text">Good Morning</div>
+                <div class="clock-display">
+                    <div class="time" id="clock-time">12:00 AM</div>
+                    <div class="date" id="clock-date">Monday, January 1, 2024</div>
+                </div>
+                <button class="btn-edit-name" id="edit-name-btn">Edit Name</button>
+            </div>
+        </section>
+
+        <!-- Main Content Grid -->
+        <div class="main-grid">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Focus Timer Card -->
+                <section class="card timer-card">
+                    <h2 class="card-title">Focus Timer</h2>
+                    <div class="timer-display" id="timer-display">25:00</div>
+                    
+                    <!-- Custom Timer Duration -->
+                    <div class="timer-settings" id="timer-settings">
+                        <label>Set Timer (minutes)</label>
+                        <div class="timer-input-group">
+                            <input type="number" id="timer-minutes" min="1" max="60" value="25" class="timer-input">
+                            <button class="btn btn-primary btn-small" id="timer-set-btn">Set</button>
+                        </div>
+                    </div>
+                    
+                    <div class="timer-controls">
+                        <button class="btn btn-primary" id="timer-start">Start</button>
+                        <button class="btn btn-secondary" id="timer-pause" disabled>Pause</button>
+                        <button class="btn btn-secondary" id="timer-reset">Reset</button>
+                    </div>
+                </section>
+
+                <!-- Quick Links Card -->
+                <section class="card quick-links-card">
+                    <h2 class="card-title">Quick Links</h2>
+                    <div class="quick-links-input">
+                        <input type="text" id="link-name" placeholder="Link name" class="input-field">
+                        <input type="url" id="link-url" placeholder="https://example.com" class="input-field">
+                        <button class="btn btn-primary" id="add-link-btn">Add Link</button>
+                    </div>
+                    <div class="links-container" id="links-container"></div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Tasks Card -->
+                <section class="card tasks-card">
+                    <h2 class="card-title">Tasks</h2>
+                    <div class="tasks-input">
+                        <input type="text" id="task-input" placeholder="Add a new task..." class="input-field">
+                        <button class="btn btn-primary" id="add-task-btn">Add</button>
+                    </div>
+                    <div class="tasks-container" id="tasks-container"></div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Name Edit -->
+    <div class="modal" id="name-modal">
+        <div class="modal-content">
+            <h2>Edit Your Name</h2>
+            <input type="text" id="name-input" placeholder="Enter your name" class="input-field">
+            <div class="modal-buttons">
+                <button class="btn btn-primary" id="save-name-btn">Save</button>
+                <button class="btn btn-secondary" id="cancel-name-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Task Edit -->
+    <div class="modal" id="task-edit-modal">
+        <div class="modal-content">
+            <h2>Edit Task</h2>
+            <input type="text" id="edit-task-input" placeholder="Edit task" class="input-field">
+            <div class="modal-buttons">
+                <button class="btn btn-primary" id="save-task-btn">Save</button>
+                <button class="btn btn-secondary" id="cancel-task-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode">🌙</button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
